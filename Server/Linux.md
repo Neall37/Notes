@@ -1,10 +1,11 @@
 - [Introduction to Linux](#introduction-to-linux)
-- [Group & File Sharing](#group---file-sharing)
-  * [Create a group for users](#create-a-group-for-users)
-  * [Setting file/directory permissions](#setting-file-directory-permissions)
-  * [Change the ownership](#change-the-ownership)
-    + [Owner and group:](#owner-and-group-)
-    + [Only group:](#only-group-)
+- [Group & File management](#group---file-management)
+  * [Workflow](#workflow)
+  * [Details](#details)
+    + [Create a group](#create-a-group)
+    + [Change the ownership of files](#change-the-ownership-of-files)
+      - [Owner and group:](#owner-and-group-)
+      - [Only group:](#only-group-)
 - [Python in VScode ssh](#python-in-vscode-ssh)
 
 # Introduction to Linux
