@@ -11,7 +11,7 @@
 - Intro to Ubuntu(Linux): https://ubuntu.com/tutorials/command-line-for-beginners#1-overview
 - Common command lines: https://www.hostinger.com/tutorials/linux-commands
 
-==Be cautious when you're deleting files, since deletion is irreversible!!!==
+**Be cautious when you're deleting files, since deletion is irreversible!!!**
 ## Group management
 Create group: `$ sudo groupadd -g 1009 demo`
 1009: group ID
