@@ -11,28 +11,26 @@
 - Intro to Ubuntu(Linux): https://ubuntu.com/tutorials/command-line-for-beginners#1-overview
 - Common command lines: https://www.hostinger.com/tutorials/linux-commands
 
-**Be cautious when you're deleting files, since deletion is irreversible!!!**
-## Group management
+**Be cautious when you're deleting files, since deletion is irreversible in Linux!!!**
+# Group & File management
+## Workflow
+- **Create a new group**: You can create a new group using the `groupadd` command. For example, `groupadd mygroup`.
+- **Add users to the group**: You can add users to the group using the `usermod` command. For example, `usermod -a -G mygroup user1 user2`.
+- **Change the group ownership of a file or directory**: You can change the group ownership of a file or directory using the `chown` command with the `:group` syntax. For example, `chown :mygroup file.txt` or `chown :mygroup /path/to/directory`.
+- **Set group permissions**: After changing the group ownership, you need to set the appropriate permissions for the group. This is done using the `chmod` command. For example, to give read and write permissions to the group, you can use `chmod g+rw file.txt` or `chmod g+rw /path/to/directory`. https://en.wikipedia.org/wiki/Chmod
+
+## Details
+### Create a group
 Create group: `$ sudo groupadd -g 1009 demo`
 1009: group ID
 
 Add user: `$ sudo usermod -aG demo user2`
 
 https://www.redhat.com/sysadmin/linux-groups
-## Setting file/directory permissions
 
-`chmod [permissions] [file/directory]`
+### Change the ownership of files
 
-How to set permissions: https://en.wikipedia.org/wiki/Chmod
-
-For example, `754` would allow:
-- "read" (4), "write" (2), and "execute" (1) for the _User_ class; i.e., 7 (4 + 2 + 1).
-- "read" (4) and "execute" (1) for the _Group_ class; i.e., 5 (4 + 1).
-- Only "read" (4) for the _Others_ class.
-
-## Change the ownership
-
-### Owner and group:
+#### Owner and group:
 `chown [options] [new_owner][:new_group] [file/directory]`
 
 - both: `chown master:group1 file1.txt`
@@ -41,7 +39,7 @@ For example, `754` would allow:
 
 More details: https://www.geeksforgeeks.org/chown-command-in-linux-with-examples/
 
-### Only group:
+#### Only group:
 `chgrp [group_name] [file/directory]`
 
 # Python in VScode ssh
