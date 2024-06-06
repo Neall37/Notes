@@ -41,3 +41,56 @@ Instead of/in addition to the script header, submission options may also be spec
 `sbatch --job-name=somename --nodes=1 --ntasks=6 --mem=4000 submit.sh`
 
 If an option is specified both in the command line and in the script header, specification from the command line takes precedence.
+
+## Interact with SLURM
+1. **Interactive Job with `srun`:**
+
+   You can use `srun` to run an interactive job. This command will allocate resources and give you an interactive shell on a compute node.
+
+   ```bash
+   srun --pty --job-name=interactive_job --time=02:00:00 --ntasks=1 --cpus-per-task=4 --mem=8G /bin/bash
+   ```
+
+   - `--pty`: Allocate a pseudo-terminal.
+   - `--job-name`: Name of the job.
+   - `--time`: Wall time limit for the job (in HH:MM:SS).
+   - `--ntasks`: Number of tasks.
+   - `--cpus-per-task`: Number of CPU cores per task.
+   - `--mem`: Memory per node.
+
+2. **Interactive Job with `salloc`:**
+
+   You can also use `salloc` to request resources for an interactive job. After resources are allocated, you can then use `srun` to run commands on the allocated resources.
+
+   ```bash
+   salloc --job-name=interactive_job --time=02:00:00 --ntasks=1 --cpus-per-task=4 --mem=8G
+   ```
+
+   Once the resources are allocated, you'll be in an interactive session where you can run commands. For example:
+
+   ```bash
+   srun --pty /bin/bash
+   ```
+
+3. **Interactive Job Example Script:**
+
+   You can also submit a script to SLURM to start an interactive session. Here is an example script that you can submit using `sbatch`.
+
+   ```bash
+   #!/bin/bash
+   #SBATCH --job-name=interactive_job
+   #SBATCH --time=02:00:00
+   #SBATCH --ntasks=1
+   #SBATCH --cpus-per-task=4
+   #SBATCH --mem=8G
+
+   srun --pty /bin/bash
+   ```
+
+   Save this script to a file, for example, `interactive_job.sh`, and then submit it with:
+
+   ```bash
+   sbatch interactive_job.sh
+   ```
+
+This will start an interactive session on a compute node with the specified resources. You can then use this interactive session to run commands or scripts as needed.
