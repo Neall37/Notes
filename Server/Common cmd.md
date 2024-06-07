@@ -47,7 +47,9 @@ salloc --job-name=interactive_job --time=02:00:00 --ntasks=1 --cpus-per-task=4 -
    Once the resources are allocated, you'll be in an interactive session where you can run commands. For example:
 
    ```bash
-# Enter existing shell
+# checck your jobid
+sacct
+# Enter your shell
 srun --jobid=6 --pty bash
 # This will print the default shell for your user, but not necessarily the shell you are currently using if you've changed it within the session.
 echo $SHELL
