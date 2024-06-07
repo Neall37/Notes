@@ -22,12 +22,14 @@ python3 -m pip install "SomeProject"
 # Copy files
 cp -r /home/packageA/. /home/cp/packageB/
 
+(Before setting up the package, enter the directory where the setup.py is first)
 # Set up a package
 python setup.py install
 
-python setup.py clean --all
-python setup.py build_ext --inplace
+# Reset
+pip uninstall package
 python setup.py install
+
 ```
 
 ## Software
