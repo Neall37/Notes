@@ -47,9 +47,12 @@ salloc --job-name=interactive_job --time=02:00:00 --ntasks=1 --cpus-per-task=4 -
    Once the resources are allocated, you'll be in an interactive session where you can run commands. For example:
 
    ```bash
+# Run after getting resource
 srun --pty /bin/bash
-# Enter new shell
-ssh comput1(new shell)
+# Enter existing shell
+srun --jobid=6 --pty bash
+# Terminate a job
+scancel jobid
    ```
 
 
