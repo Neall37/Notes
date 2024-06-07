@@ -1,7 +1,10 @@
-- [Python](#python)
-- [Software](#software)
-- [SLURM:](#slurm-)
-- [CPU status:](#cpu-status-)
+- [Content](#content)
+  * [Python](#python)
+  * [Software](#software)
+  * [SLURM:](#slurm-)
+  * [CPU status:](#cpu-status-)
+  * [Stardist](#stardist)
+    + [Parallel Computing](#parallel-computing)
 
 # Content
 ## Python
@@ -74,5 +77,16 @@ free -h
 # View the number of processing units
 nproc
 ```
+## Stardist
 
+### Parallel Computing
+**Environment Variables**: The `OMP_NUM_THREADS` environment variable is the primary controller for the number of threads OpenMP will use. If it’s set to 1, OpenMP will restrict its execution to a single thread regardless of how many are available. Check this variable by running:
+
+`echo $OMP_NUM_THREADS`
+
+If it's not set or set to 1, you can change it by:
+
+`export OMP_NUM_THREADS=256  # or any number you prefer`
+
+The auto-thread-detection function in Stardist tends to be conservative. If you're aiming for faster performance, you can manually set `OMP_NUM_THREADS` to your desired number of threads. Just ensure that your computer can handle the specified amount without issues.
 
