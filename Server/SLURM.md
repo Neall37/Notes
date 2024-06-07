@@ -6,6 +6,10 @@
 # Content
 https://biohpc.cornell.edu/lab/SLURM-on-demand.htm
 
+Please refer to Common cmd for quick start:
+https://github.com/Neall37/Notes/blob/main/Server/Common%20cmd.md
+
+
 ## Submitting batch jobs
 
 SLURM offers several mechanism for job submission. Perhaps the most popular one is batch job submission.
