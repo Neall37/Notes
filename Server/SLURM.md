@@ -94,3 +94,73 @@ If an option is specified both in the command line and in the script header, spe
    ```
 
 This will start an interactive session on a compute node with the specified resources. You can then use this interactive session to run commands or scripts as needed.
+
+## Checking Job Status
+
+1. **`squeue`**: This command lists the jobs in the SLURM queue. You can filter the output to show only your jobs or specific details.
+
+   ```bash
+   # Show all jobs
+   squeue
+
+   # Show only your jobs
+   squeue -u your_username
+
+   # Show detailed information about your jobs
+   squeue -l -u your_username
+   ```
+
+2. **`scontrol show job JOB_ID`**: Provides detailed information about a specific job.
+
+   ```bash
+   scontrol show job 12345
+   ```
+
+3. **`sacct`**: Displays accounting information for jobs. This can be used to check the history and status of completed jobs.
+
+   ```bash
+   # Show job information for the current day
+   sacct
+
+   # Show detailed job information
+   sacct -o jobid,jobname%30,partition,account,alloccpus,state,exitcode,start,end
+
+   # Show job information for a specific job
+   sacct -j 12345
+   ```
+
+### Example Workflow
+
+To check the status of your jobs and ensure you are on the right track, you might follow these steps:
+
+1. **Submit a Job**: Use `sbatch` to submit your job script.
+
+   ```bash
+   sbatch my_job_script.sh
+   ```
+
+2. **Check Job Queue**: Use `squeue` to see if your job is in the queue and its status.
+
+   ```bash
+   squeue -u your_username
+   ```
+
+3. **Get Job Details**: Use `scontrol show job JOB_ID` to get detailed information about your job.
+
+   ```bash
+   scontrol show job 12345
+   ```
+
+4. **Monitor Job Progress**: Use `sacct` to check the status and progress of your job.
+
+   ```bash
+   sacct -j 12345
+   ```
+
+5. **Check Node Status**: Ensure the nodes you are using are up and running.
+
+   ```bash
+   sinfonode
+   scontrol show node node_name
+   ```
+
