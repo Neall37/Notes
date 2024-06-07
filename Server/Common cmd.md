@@ -1,8 +1,8 @@
 - [Content](#content)
   * [Python](#python)
   * [Software](#software)
-  * [SLURM](#slurm-)
-  * [CPU status](#cpu-status-)
+  * [SLURM](#slurm)
+  * [CPU status](#cpu-status)
   * [Stardist](#stardist)
     + [Parallel Computing](#parallel-computing)
 
