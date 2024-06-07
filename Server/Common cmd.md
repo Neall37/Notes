@@ -1,3 +1,9 @@
+- [Python](#python)
+- [Software](#software)
+- [SLURM:](#slurm-)
+- [CPU status:](#cpu-status-)
+
+# Content
 ## Python
 https://packaging.python.org/en/latest/tutorials/installing-packages/
 ```bash
