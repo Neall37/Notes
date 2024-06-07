@@ -1,8 +1,8 @@
 - [Content](#content)
   * [Python](#python)
   * [Software](#software)
-  * [SLURM:](#slurm-)
-  * [CPU status:](#cpu-status-)
+  * [SLURM](#slurm-)
+  * [CPU status](#cpu-status-)
   * [Stardist](#stardist)
     + [Parallel Computing](#parallel-computing)
 
@@ -36,7 +36,7 @@ python setup.py install
 3D cellpose: python -m cellpose --Zstack 
 ```
 
-## SLURM:
+## SLURM
 ```bash
 # Check status/job: 
 sacct
@@ -63,7 +63,7 @@ scancel jobid
    ```
 
 
-## CPU status:
+## CPU status
 ```bash
 # View real-time system resource usage
 top
