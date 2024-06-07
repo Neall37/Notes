@@ -1,3 +1,9 @@
+- [Submitting batch jobs](#submitting-batch-jobs)
+- [Interact with SLURM](#interact-with-slurm)
+- [Checking Job Status](#checking-job-status)
+  * [Example Workflow](#example-workflow)
+
+# Content
 https://biohpc.cornell.edu/lab/SLURM-on-demand.htm
 
 ## Submitting batch jobs
