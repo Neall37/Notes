@@ -90,5 +90,5 @@ If it's not set or set to 1, you can change it by:
 
 `export OMP_NUM_THREADS=256  # or any number you prefer`
 
-The auto-thread-detection function in Stardist tends to be conservative. If you're aiming for faster performance, you can manually set `OMP_NUM_THREADS` to your desired number of threads. Just ensure that your computer can handle the specified amount without issues.
+(The auto-threads-detection function is active in Stardist if you don't set the OMP_NUM_THREADS.)
 
