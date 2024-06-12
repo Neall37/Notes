@@ -46,7 +46,7 @@ sacct -j jobID
 scontrol show job jobID
 
 # Request for allocate resource:
-salloc --job-name=interactive_job --time=02:00:00 --ntasks=1 --cpus-per-task=4 --mem=8G
+salloc --job-name=job --time=02:00:00 --ntasks=1 --cpus-per-task=256 --mem=700G
    ```
 
    Once the resources are allocated, you'll be in an interactive session where you can run commands. For example:
@@ -55,7 +55,8 @@ salloc --job-name=interactive_job --time=02:00:00 --ntasks=1 --cpus-per-task=4 -
 # checck your jobid
 sacct
 # Enter your shell
-srun --jobid=6 --pty bash
+srun --job-name=job --time=02:00:00 --ntasks=1 --cpus-per-task=256 --mem=700G --pty bash
+
 # This will print the default shell for your user, but not necessarily the shell you are currently using if you've changed it within the session.
 echo $SHELL
 # This command prints the name of the current shell or script.
@@ -92,3 +93,38 @@ If it's not set or set to 1, you can change it by:
 
 (The auto-threads-detection function is active in Stardist if you don't set the OMP_NUM_THREADS.)
 
+## R
+### Terminal
+`R --version`
+
+Install renv in your project:
+
+`install.packages("renv")`
+
+Initialize renv in your project directory:
+
+`renv::init()`
+
+You can run R scripts directly in the terminal. For example, to run a script called my_script.R:
+
+`Rscript my_script.R`
+
+To install R packages, you can use R's package management system. For example:
+
+`install.packages("ggplot2")`
+
+### Using RStudio Server (Optional)
+
+If you prefer a graphical interface, you might consider setting up RStudio Server on your remote machine.
+```bash
+# Download and install RStudio Server:
+
+sudo apt-get install gdebi-core
+wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.4.1106-amd64.deb
+sudo gdebi rstudio-server-1.4.1106-amd64.deb
+
+# Start RStudio Server:
+sudo rstudio-server start
+
+# Access RStudio Server via your web browser by navigating to http://remote_server_address:8787.
+```
