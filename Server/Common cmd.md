@@ -7,7 +7,7 @@
     + [Parallel Computing](#parallel-computing)
   * [R](#r)
     + [Terminal](#terminal)
-    + [Using RStudio Server (Optional)](#using-rstudio-server--optional)
+    + [Using RStudio Server](#using-rstudio-server)
 
 # Content
 ## Python
