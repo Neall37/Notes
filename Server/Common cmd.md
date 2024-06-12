@@ -116,7 +116,7 @@ To install R packages, you can use R's package management system. For example:
 
 `install.packages("ggplot2")`
 
-### Using RStudio Server (Optional)
+### Using RStudio Server
 
 If you prefer a graphical interface, you might consider setting up RStudio Server on your remote machine.
 ```bash
