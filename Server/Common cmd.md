@@ -5,6 +5,9 @@
   * [CPU status](#cpu-status)
   * [Stardist](#stardist)
     + [Parallel Computing](#parallel-computing)
+  * [R](#r)
+    + [Terminal](#terminal)
+    + [Using RStudio Server (Optional)](#using-rstudio-server)
 
 # Content
 ## Python
